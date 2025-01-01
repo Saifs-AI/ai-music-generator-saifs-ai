@@ -1,6 +1,6 @@
 # AI Music Generator: The Future of Creative Music Production 🎵
 
-![AI Music Generation](https://saifs.ai/ai-music-generator-saifs-ai/ai-music-generator-saifs-ai/images/ai-music-banner.jpg)
+![AI Music Generation](https://saifs.ai/ai-music-generator-saifs-ai)
 
 ## Table of Contents
 - [Introduction](#introduction)
