@@ -3,76 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Music Generator | Saifs.ai</title>
+    <title>Free AI Song Cover Generator & Music Creator | Saif's AI</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 </head>
 <body>
     <div id="app">
-        <header>
-            <nav>
-                <div class="logo">
-                    <a href="https://saifs.ai">
-                        <span>Saifs.ai</span>
-                        <span class="subtitle">Music Generator</span>
-                    </a>
-                </div>
-                <div class="nav-links">
-                    <a href="https://saifs.ai">Home</a>
-                    <a href="https://saifs.ai#about">About</a>
-                    <a href="https://saifs.ai#contact">Contact</a>
-                </div>
-            </nav>
-        </header>
-
         <main>
-            <div class="generator-container">
-                <h1>AI Music Generator</h1>
-                <div class="controls">
-                    <div class="control-group">
-                        <label>Genre</label>
-                        <select v-model="selectedGenre">
-                            <option v-for="genre in genres" :value="genre">{{ genre }}</option>
-                        </select>
-                    </div>
-                    <div class="control-group">
-                        <label>Tempo</label>
-                        <input type="range" v-model="tempo" min="60" max="180">
-                        <span>{{ tempo }} BPM</span>
-                    </div>
-                    <div class="control-group">
-                        <label>Mood</label>
-                        <select v-model="selectedMood">
-                            <option v-for="mood in moods" :value="mood">{{ mood }}</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="container">
+                <div class="content-box">
+                    <h1>Free AI Song Cover Generator & Music Creator</h1>
+                    <p class="subtitle">Transform your lyrics into songs or create amazing covers with our AI music generator</p>
 
-                <div class="visualizer">
-                    <div class="wave-container">
-                        <div v-for="bar in 50" :key="bar" 
-                             class="wave-bar"
-                             :style="{ height: getRandomHeight() + 'px' }">
-                        </div>
+                    <div class="music-input">
+                        <label>Describe Your Music</label>
+                        <textarea 
+                            v-model="musicDescription" 
+                            placeholder="E.g. 'Create an upbeat pop song with piano and drums, energetic chorus with a catchy melody'"
+                            rows="4">
+                        </textarea>
+                        <button class="enhance-btn">
+                            <span class="enhance-icon">✨</span>
+                            Enhance Description
+                        </button>
                     </div>
-                </div>
 
-                <div class="buttons">
-                    <button @click="generateMusic" 
-                            :class="{ 'generating': isGenerating }">
-                        {{ isGenerating ? 'Generating...' : 'Generate Music' }}
-                    </button>
-                    <button @click="downloadMusic" 
-                            :disabled="!musicGenerated">
-                        Download
-                    </button>
+                    <a href="https://saifs.ai/ai-music-generator-saifs-ai" class="generate-btn">
+                        <span class="music-icon">🎵</span>
+                        Generate Music
+                    </a>
                 </div>
             </div>
         </main>
-
-        <footer>
-            <p>Created by <a href="https://saifs.ai">Saifs.ai</a> - Experience the full power of AI Music Generation</p>
-        </footer>
     </div>
     <script src="app.js"></script>
 </body>

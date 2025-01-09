@@ -1,9 +1,8 @@
 :root {
-    --primary-color: #6c63ff;
-    --secondary-color: #4CAF50;
-    --background-color: #1a1a1a;
-    --text-color: #ffffff;
-    --accent-color: #ff6b6b;
+    --primary-color: #6366f1;
+    --text-color: #374151;
+    --background-color: #ffffff;
+    --border-color: #e5e7eb;
 }
 
 * {
@@ -13,186 +12,155 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--background-color);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
 }
 
-#app {
+main {
+    padding: 2rem;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-}
-
-header {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    backdrop-filter: blur(10px);
-}
-
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.logo a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-}
-
-.logo .subtitle {
-    font-size: 0.8rem;
-    color: var(--accent-color);
-}
-
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-left: 2rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-main {
-    flex: 1;
-    padding: 2rem;
-}
-
-.generator-container {
-    max-width: 800px;
+.container {
+    max-width: 1000px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.content-box {
+    background: white;
+    padding: 3rem 4rem;
+    border-radius: 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02),
+                0 12px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
+    font-size: 2.75rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
 }
 
-.controls {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+.subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
 }
 
-.control-group {
-    display: flex;
-    flex-direction: column;
+.music-input {
+    text-align: left;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-label {
-    margin-bottom: 0.5rem;
-    color: var(--accent-color);
+.music-input label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #374151;
 }
 
-select, input[type="range"] {
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    color: var(--text-color);
-}
-
-.visualizer {
-    height: 200px;
-    margin: 2rem 0;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 1rem;
-}
-
-.wave-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    gap: 2px;
-}
-
-.wave-bar {
-    flex: 1;
-    background: var(--primary-color);
-    border-radius: 2px;
-    transition: height 0.2s ease;
-}
-
-.buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-button {
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+textarea {
+    width: 100%;
+    padding: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    resize: none;
+    min-height: 120px;
+    margin-bottom: 1rem;
+    background: #f9fafb;
     transition: all 0.3s ease;
 }
 
-button:first-child {
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: white;
+}
+
+.enhance-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    color: var(--text-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    float: right;
+}
+
+.enhance-btn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.enhance-icon {
+    font-size: 1.2rem;
+}
+
+.generate-btn {
     background: var(--primary-color);
     color: white;
-}
-
-button:last-child {
-    background: var(--secondary-color);
-    color: white;
-}
-
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-button.generating {
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.95); }
-    100% { transform: scale(1); }
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-footer a {
-    color: var(--primary-color);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.25);
+}
+
+.music-icon {
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-    .controls {
-        grid-template-columns: 1fr;
+    h1 {
+        font-size: 2rem;
     }
     
-    .buttons {
-        flex-direction: column;
+    main {
+        padding: 1.5rem;
     }
-    
-    .nav-links {
-        display: none;
+
+    .content-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .music-input {
+        margin-bottom: 2rem;
+    }
+
+    .enhance-btn {
+        float: none;
+        margin-bottom: 1rem;
     }
 } 
